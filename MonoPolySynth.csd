@@ -275,7 +275,7 @@ instr	1	;RECEIVES MIDI NOTE INPUT
 endin
 				
 instr	2	;THE MONOPHONIC INSTRUMENT
-	kactive1	active	1						;CONTINUALLY TRACK THE NUMBER OF ACTIVE INSTANCES OF INSTRUMENT 1. I.E. THE NUMBER OF MIDI NOTES HELD.
+	kactive1	active	1						;CONTINUALLY TRACK THE NUMBER OF ACTIVE INSTANCES OF INSTRUMENT 1. I.E. THE NUMBER OF MIDI NOTES HELD  
 
 	;CREATE PORTAMENTO ON PITCH PARAMETER
 	kporttime	linseg	0,0.01,1					;PORTAMENTO TIME RISES QUICKLY TO A HELD VALUE OF '1'
@@ -284,7 +284,7 @@ instr	2	;THE MONOPHONIC INSTRUMENT
 	
 	kpw		portk	gkpw, kporttime*0.05				;PORTAMENTO IS APPLIED TO gkpw VARIABLE
 
-	kmodwhl		ctrl7	1,1,0,1						;READ IN CONTROLLER 1 (MODULATION WHEEL)
+	kmodwhl		ctrl7	1,1,0,1						;READ IN CONTROLLER 1 (MODULATION WHEEL) *** N,1,0,1  ***
 	kmod		oscil	1,gkmodfreq,gisine				;CREATE GENERAL MODULATION FUNCTION
 	gkvib		=	(kmod * kmodwhl * gkvibdep) + 1			;CREATE VIBRATO (PITCH MODULATION) FROM GENERAL MODULATION FUNCTION
 	gktrm		=	1-(kmod*0.5*gktrmdep*kmodwhl)-(gktrmdep*0.5*kmodwhl)	;CREATE TREMOLO (AMPLITUDE MODULATION) FROM GENERAL MODULATION FUNCTION
@@ -437,6 +437,25 @@ instr	5
 		outs		aL,aR
 		clear		gaRvbSndL,gaRvbSndR
 endin
+
+;instr   6
+;endin
+
+;instr   7
+;endin
+
+;instr   8
+;endin
+
+;instr   9
+;endin
+
+;instr   10
+;endin
+
+;instr   11
+;endin
+
 
 </CsInstruments>
 
