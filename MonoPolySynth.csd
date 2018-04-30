@@ -406,6 +406,8 @@ instr	3	;THE POLYPHONIC INSTRUMENT
 	gaRvbSndR	=	gaRvbSndR+(aFilt*gkRvbAmt)	
 endin
 
+
+; This should be moved down below instrument 11
 instr	4	; PING PONG DELAY
 	imaxdelay	=	2		;MAXIMUM DELAY TIME
 	kDlyTim		port	gkDlyTim,0.1	;SMOOTH DELAY TIME CHANGES
